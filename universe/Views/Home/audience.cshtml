@@ -1,0 +1,66 @@
+﻿@model IEnumerable<universe.Models.Audience>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>База данных</title>
+    <style>
+        .p1 {
+            color: #00e600;
+        }
+        type=" text/css" >
+        TABLE {
+            width: 300px; /* Ширина таблицы */
+
+            border-co llapse: collapse; /* Убираем двойные линии между ячейками */
+        }
+
+        TD, TH {
+            padding: 3px; /* Поля вокруг содержимого таблицы */
+            border: 1px solid #00e600; /* Параметры рамки */
+        }
+
+        TH {
+            background: #66ff66; /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+    <div class="p1">
+        <h1 align="center">Список аудиторий</h1>
+    </div>
+    <table class="table">
+        <tr>
+            <th>Номер аудитории</th>
+            <th>Площадь</th>
+            <th>Количество окон</th>
+            <th>Секций отопления</th>
+            <th>Назначение</th>
+            <th>Код ответственного</th>
+            <th>Код кафедры</th>
+            <th>Код здания</th>
+        </tr>
+        @foreach (var item in Model)
+            {
+        <tr>
+            <td>@item.AudienceId</td>
+            <td>@item.ASquare</td>
+            <td>@item.AWindows</td>
+            <td>@item.AHeating</td>
+            <td>@item.ATarget</td>
+            <td>@item.AResponsibleId</td>
+            <td>@item.ADepartmentId</td>
+            <td>@item.ABuildId</td>
+                <td>
+                    <a asp-action="edit_audience" asp-controller="Home" asp-route-id="@item.AudienceId">Изменить</a>
+            </td>
+                <td>
+                    <form asp-controller="Home" asp-action="Delete" method="post" asp-route-id="@item.AudienceId">
+                        <input type="submit" value="Удалить" />
+                    </form>
+                </td>
+        </tr>
+            }
+    </table>
+</body>
+</html>
+

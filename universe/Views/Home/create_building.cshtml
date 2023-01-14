@@ -1,0 +1,48 @@
+﻿@model universe.Models.Building
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>База данных</title>
+    <style>
+        .p1 {
+            color: #00e600;
+        }
+    </style>
+</head>
+<body align="center">
+    <div class="p1">
+        <h1 align="center">Добавить здание</h1>
+        <form asp-action="create_building" asp-controller="home">
+            <p>
+                <label asp-for="BuildId">Код здания</label><br />
+                <input type="number" asp-for="BuildId" />
+            </p>
+            <p>
+                <label asp-for="BKadastr">Кадастровый номер</label><br />
+                <input type="number" asp-for="BKadastr" />
+            </p>
+            <p>
+                <label asp-for="BName">Название</label><br />
+                <input type="text" asp-for="BName" />
+            </p>
+            <p>
+                <label asp-for="BLand">Площадь</label><br />
+                <input type="number" asp-for="BLand" />
+            </p>
+            <p>
+                <label asp-for="BYear">Год постройки</label><br />
+                <input type="number" asp-for="BYear" />
+            </p>
+            <p>
+                <label asp-for="BMaterial">Материал</label><br />
+                <input type="text" asp-for="BMaterial" />
+            </p>
+            <p>
+                <label asp-for="BAdress">Адрес</label><br />
+                <input type="number" asp-for="BAdress" />
+            </p>
+            <p>
+                <input type="submit" value="Отправить" />
+            </p>
+        </form>
+    </div>
+</body>

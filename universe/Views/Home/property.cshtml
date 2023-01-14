@@ -1,0 +1,59 @@
+﻿@model IEnumerable<universe.Models.Property>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>База данных</title>
+    <style>
+        .p1 {
+            color: #00e600;
+        }
+        type=" text/css" >
+        TABLE {
+            width: 300px; /* Ширина таблицы */
+
+            border-co llapse: collapse; /* Убираем двойные линии между ячейками */
+        }
+
+        TD, TH {
+            padding: 3px; /* Поля вокруг содержимого таблицы */
+            border: 1px solid #00e600; /* Параметры рамки */
+        }
+
+        TH {
+            background: #66ff66; /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+    <div class="p1">
+        <h1 align="center">Список имущества</h1>
+    </div>
+    <table class="table">
+        <tr>
+            <th>Код имущества</th>
+            <th>Наименование</th>
+            <th>Начало эксплуатации</th>
+            <th>Стоимость</th>
+            <th>Год переоценки</th>
+            <th>Стоимость после переоценки </th>
+            <th>Период эксплуатации</th>
+            <th>Код аудитории</th>
+        </tr>
+        @foreach (var item in Model)
+            {
+        <tr>
+            <td>@item.PropertyId</td>
+            <td>@item.PName</td>
+            <td>@item.BStart</td>
+            <td>@item.BCost</td>
+            <td>@item.BCostYear</td>
+            <td>@item.BCostAfter</td>
+            <td>@item.BPeriod</td>
+            <td>@item.BAudienceId</td>
+
+        </tr>
+            }
+    </table>
+</body>
+</html>
+

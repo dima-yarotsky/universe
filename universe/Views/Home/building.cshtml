@@ -1,0 +1,57 @@
+﻿@model IEnumerable<universe.Models.Building>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>База данных</title>
+    <style>
+        .p1 {
+            color: #00e600;
+        }
+         type=" text/css" >
+        TABLE {
+        width: 300px; /* Ширина таблицы */
+          border-co llapse: collapse; /* Убираем двойные линии между ячейками */
+        }
+
+         TD, TH {
+
+                    padding: 3px; /* Поля вокруг содержимого таблицы */
+            border: 1px solid #00e600; /* Параметры рамки */
+        }
+
+        TH     {
+            background: #66ff66; /* Цвет фона */
+        }
+    </style>
+    </head>
+    <body>
+    <div class="p1">
+        <h1 align="center">Список зданий</h1>
+    </div>
+   <p align="center"> <table class="table">
+        <tr>
+            <th>Код здания</th>
+            <th>Кадастровый номер</th>
+            <th> Название</th>
+            <th>Площадь</th>
+            <th>Год постройки</th>
+            <th>Материал</th>
+            <th>Адрес</th>
+        </tr>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.BuildId</td>
+                <td>@item.BKadastr</td>
+                <td>@item.BName</td>
+                <td>@item.BLand</td>
+                <td>@item.BYear</td>
+                <td>@item.BMaterial</td>
+                <td>@item.BAdress</td>
+
+            </tr>
+            }
+    </table></p>
+    </body>
+</html>
+

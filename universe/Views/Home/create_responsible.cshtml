@@ -1,0 +1,36 @@
+﻿@model universe.Models.Responsible
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>База данных</title>
+       <style>
+.p1 {
+            color: #00e600;
+}
+  </style>
+</head>
+<body align="center">
+    <div class="p1">
+            <h1 align="center">Добавить материально ответственного</h1>
+        <form asp-action="create_responsible" asp-controller="home">
+            <p>
+                <label asp-for="ResponsibleId">Код ответственного</label><br />
+                <input type="number" asp-for="ResponsibleId" />
+            </p>
+            <p>
+                <label asp-for="RName">ФИО</label><br />
+                <input type="text" asp-for="RName" />
+            </p>
+            <p>
+                <label asp-for="RExperiense">Год начала работы</label><br />
+                <input type="number" asp-for="RExperiense" />
+            </p>
+            <p>
+                <label asp-for="RAdressResp">Адрес</label><br />
+                <input type="text" asp-for="RAdressResp" />
+            </p>
+            <p>
+                <input type="submit" value="Отправить" />
+            </p>
+        </form>
+ </div>
+</body>

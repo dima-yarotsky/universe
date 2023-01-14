@@ -1,0 +1,40 @@
+﻿@model universe.Models.Department
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>База данных</title>
+       <style>
+.p1 {
+            color: #00e600;
+}
+  </style>
+</head>
+<body align="center">
+    <div class="p1">
+            <h1 align="center">Добавить Кафедру</h1>
+            <form asp-action="create_department" asp-controller="home">
+                <p>
+                    <label asp-for="DepartmentId">Код кафедры</label><br />
+                    <input type="number" asp-for="DepartmentId" />
+                </p>
+                <p>
+                    <label asp-for="DName">Наименование</label><br />
+                    <input type="text" asp-for="DName" />
+                </p>
+                <p>
+                    <label asp-for="DBoss">Зав.Кафедрой</label><br />
+                    <input type="text" asp-for="DBoss" />
+                </p>
+                <p>
+                    <label asp-for="DPhone">Телефон</label><br />
+                    <input type="number" asp-for="DPhone" />
+                </p>
+                <p>
+                    <label asp-for="DOfficeDean">Принадлежность к деканату</label><br />
+                    <input type="text" asp-for="DOfficeDean" />
+                </p>
+                <p>
+                    <input type="submit" value="Отправить" />
+                </p>
+            </form>
+ </div>
+</body>

@@ -1,0 +1,52 @@
+﻿@model universe.Models.Audience
+    <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>База данных</title>
+       <style>
+.p1 {
+            color: #00e600;
+}
+  </style>
+</head>
+<body align="center">
+    <div class="p1">
+            <h1 align="center">Добавить аудиторию</h1>
+        <form asp-action="create_audience" asp-controller="home">
+    <p>
+        <label asp-for="AudienceId">Номер аудитории</label><br />
+        <input type="number" asp-for="AudienceId" />
+    </p>
+    <p>
+        <label asp-for="ASquare">Площадь</label><br />
+        <input type="number" asp-for="ASquare" />
+    </p>
+    <p>
+        <label asp-for="AWindows">Количество окон</label><br />
+        <input type="number" asp-for="AWindows" />
+    </p>
+    <p>
+        <label asp-for="AHeating">количество секций</label><br />
+        <input type="number" asp-for="AHeating" />
+    </p>
+    <p>
+        <label asp-for="ATarget">Назначение</label><br />
+        <input type="text" asp-for="ATarget" />
+    </p>
+       <p>
+        <label asp-for="AResponsibleId">Код ответственного</label><br />
+        <input type="number" asp-for="AResponsibleId" />
+    </p>
+     <p>
+        <label asp-for="ADepartmentId">Код кафедры</label><br />
+        <input type="number" asp-for="ADepartmentId" />
+    </p>
+     <p>
+        <label asp-for="ABuildId">Код здания</label><br />
+        <input type="number" asp-for="ABuildId" />
+    </p>
+    <p>
+        <input type="submit" value="Отправить" />
+    </p>
+</form>
+ </div>
+</body>

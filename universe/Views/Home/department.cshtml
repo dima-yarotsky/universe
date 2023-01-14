@@ -1,0 +1,50 @@
+﻿@model IEnumerable<universe.Models.Department>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>База данных</title>
+    <style>
+        .p1 {
+            color: #00e600;
+        }
+          type=" text/css" >
+        TABLE {
+        width: 300px; /* Ширина таблицы */
+          border-co llapse: collapse; /* Убираем двойные линии между ячейками */
+        }
+
+         TD, TH {
+
+                    padding: 3px; /* Поля вокруг содержимого таблицы */
+            border: 1px solid #00e600; /* Параметры рамки */
+        }
+
+        TH     {
+            background: #66ff66; /* Цвет фона */
+        }
+    </style>
+    </head>
+    <body>
+    <div class="p1">
+        <h1 align="center">список кафедр</h1>
+    </div>
+   <p align="center"> <table class="table">
+        <tr>
+            <th>Код кафедры</th>
+            <th>Зав.кафедрой</th>
+            <th> Телефон кафедры</th>
+            <th>Принадлежность к деканату</th>
+        </tr>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.DepartmentId</td>
+                <td>@item.DBoss</td>
+                <td>@item.DPhone</td>
+                <td>@item.DOfficeDean</td>
+            </tr>
+            }
+    </table></p>
+    </body>
+</html>
+
